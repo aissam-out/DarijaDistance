@@ -7,6 +7,8 @@ setup(
     author='Aissam Outchakoucht',
     author_email='aissam.outchakoucht@gmail.com',
     url='https://github.com/aissam-out/DarijaDistance',
+    long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     include_package_data=True,
     package_data={
