@@ -81,7 +81,7 @@ For tasks such as finding the closest words and looking up translations, the Wor
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or find a bug, please open an issue or submit a pull request.
+Contributions are welcome! If you have any ideas, suggestions, or find a bug, please open an issue or submit a pull request to the Github repo.
 
 ## Running Tests
 
