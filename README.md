@@ -91,7 +91,7 @@ python -m unittest discover -s tests
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./License) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/aissam-out/DarijaDistance/blob/main/License) file for more details.
 
 ## Contact
 
