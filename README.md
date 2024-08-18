@@ -79,6 +79,44 @@ print(f"Potential translations for 'klb': {translation}")
 
 For tasks such as finding the closest words and looking up translations, the WordDistance library relies on the Darija Open Dataset [(DODa)](https://github.com/darija-open-dataset/dataset), which was used to create the embedded pickle files that power these features. Specifically, the `hash_table_word.pickle` and `hash_table_sum.pickle` files. This structure enables efficient word lookup and comparison within the Darija language. However, for functions like `distance_between()` and other tools that do not require an underlying dataset, the library remains dataset agnostic and can operate with any words, regardless of their language or context.
 
+## Checking for names
+
+```python
+wd.check_name("aissam")
+# output: (True, {'potential translations': ['Aissam'], 'confidence': '100%'})
+wd.check_name("tomobil")
+# output: (False, {})
+```
+
+DarijaDistance library also includes a check_name method, designed to verify whether a given word is recognized as a name within the system. This function quickly scans the list of known names and returns a boolean indicating whether the word is a match. If a match is found, the function also provides potential translations along with a confidence score, ensuring that you can identify and work with names accurately in your applications.
+
+## Managing Names and Translations with DarijaDataManager
+
+The DarijaDataManager class provides easy-to-use methods for adding names and translations to your local datasets, ensuring your data is always up-to-date.
+
+### Adding Names
+You can add a new name to the list using the add_name method. If the name already exists, it won't be added again.
+
+```python
+from DarijaDistance.preprocess import DarijaDataManager
+
+data_manager = DarijaDataManager()
+
+data_manager.add_name("aissam")
+```
+
+### Adding Translations
+Similarly, you can add new word translations using the add_translations method. The method ensures that only unique translations are added.
+
+```python
+from DarijaDistance.preprocess import DarijaDataManager
+
+data_manager = DarijaDataManager()
+
+translations = [("la", "no"), ("klb", "dog")]
+data_manager.add_translations(translations)
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or find a bug, please open an issue or submit a pull request to the Github repo.
