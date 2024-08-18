@@ -122,7 +122,7 @@ class DarijaDataManager:
         """
         # Determine the correct path if not provided
         if not names_csv_path:
-            names_csv_path = os.path.join(os.getcwd(), 'DarijaDistance/data', 'names.csv')
+            names_csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'names.csv')
         
         if not names_csv_path:
             raise ValueError("The path to the names.csv file is not provided or invalid.")
@@ -175,7 +175,7 @@ class DarijaDataManager:
                 raise ValueError(f"Invalid translation entry: {translation}. Expected a list or tuple with two elements.")
 
         if not translations_csv_path:
-            translations_csv_path = os.path.join(os.getcwd(), 'DarijaDistance/data', 'translations.csv')
+            translations_csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'translations.csv')
 
         existing_translations = set()
 
@@ -201,9 +201,9 @@ class DarijaDataManager:
             # Re-generate hash tables and pickle files
             self.encoder.load_csv(translations_csv_path)
             self.encoder.save_to_pickle(
-                os.path.join(os.getcwd(), 'DarijaDistance/data', 'hash_table_word.pickle'), 
-                os.path.join(os.getcwd(), 'DarijaDistance/data', 'hash_table_sum.pickle'),
-                os.path.join(os.getcwd(), 'DarijaDistance/data', 'list_of_sum_keys.pickle')
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'hash_table_word.pickle'), 
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'hash_table_sum.pickle'),
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'list_of_sum_keys.pickle')
             )
         
         except (IOError, OSError) as e:
