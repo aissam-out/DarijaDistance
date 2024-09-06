@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='DarijaDistance',
-    version='1.0.7',
+    version='1.0.8',
     description='A library for finding the closest words and calculating word distances for the Moroccan Dialect Darija',
     author='Aissam Outchakoucht',
     author_email='aissam.outchakoucht@gmail.com',
